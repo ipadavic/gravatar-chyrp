@@ -1,0 +1,7 @@
+name: Gravatar
+url: https://github.com/ipadavic/gravatar-chyrp
+version: 1.0
+description: Get gravatar image for author email
+author:
+  name: Ivan Padavic <ipadavic@gmail.com>
+  url: https://github.com/ipadavic/

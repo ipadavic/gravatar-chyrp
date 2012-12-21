@@ -1,0 +1,43 @@
+{% extends "layout.twig" %}
+
+{% block title %}${ "Gravatar Settings" | translate("gravatar") }{% endblock %}
+
+{% block content %}
+            <form id="gravatar_settings" class="split" action="{% admin "gravatar_settings" %}" method="post">
+                <fieldset>
+                    <p>
+                        <label for="gravatar_size">${ "Gravatar size" | translate("gravatar") }</label>
+                        <input class="text" type="text" name="gravatar_size" value="${ site.gravatar_size | escape }" id="gravatar_size" />
+                    </p>
+                    <p>
+                        <label for="gravatar_rating">${ "Gravatar rating" | translate("gravatar") }</label>
+                        <select name="gravatar_rating" id="gravatar_rating">
+                            <option value="g" {% if site.gravatar_rating == 'g' %}selected{% endif %}>g</option>
+                            <option value="pg" {% if site.gravatar_rating == 'pg' %}selected{% endif %}>pg</option>
+                            <option value="r" {% if site.gravatar_rating == 'r' %}selected{% endif %}>r</option>
+                            <option value="x" {% if site.gravatar_rating == 'x' %}selected{% endif %}>x</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="gravatar_image">${ "Gravatar image" | translate("gravatar") }</label>
+                        <select name="gravatar_image" id="gravatar_image">
+                            <option value="404" {% if site.gravatar_image == '404' %}selected{% endif %}>404</option>
+                            <option value="mm" {% if site.gravatar_image == 'mm' %}selected{% endif %}>mm</option>
+                            <option value="identicon" {% if site.gravatar_image == 'identicon' %}selected{% endif %}>identicon</option>
+                            <option value="monsterid" {% if site.gravatar_image == 'monsterid' %}selected{% endif %}>monsterid</option>
+                            <option value="wavatar" {% if site.gravatar_image == 'wavatar' %}selected{% endif %}>wavatar</option>
+                            <option value="retro" {% if site.gravatar_image == 'retro' %}selected{% endif %}>retro</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="gravatar_use_https">${ "Use https" | translate("gravatar") }</label>
+                        <input {% if site.gravatar_use_https %}checked{% endif %} type="checkbox" name="gravatar_use_https" id="gravatar_use_https" />
+                    </p>
+                    <p class="buttons">
+                        <button type="submit" class="yay"><img src="$theme_url/images/icons/success.png" alt="success" />${ "Update" | translate }</button>
+                    </p>
+
+                    <input type="hidden" name="hash" value="$site.secure_hashkey" id="hash" />
+                </fieldset>
+            </form>
+{% endblock %}
