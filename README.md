@@ -5,6 +5,12 @@ gravatar-chyrp is a simple gravatar module for [Chyrp ](http://chyrp.net/) blogg
 
 Module is based on [Gravatar class ](https://github.com/muddylemon/gravatar) by Lance Kidwell. 
 
+
+Installation:
+
+Create Folder gravatar inside modules folder and copy files there.
+
+
 Usage: 
 
 Inside your twig template
